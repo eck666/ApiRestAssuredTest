@@ -1,0 +1,7 @@
+16-05-2022 17:32:50.493 [Gauge] [INFO] Initializing concepts cache with 0 concepts
+16-05-2022 17:32:50.515 [Gauge] [INFO] Initializing specs cache with 1 specs
+16-05-2022 17:32:50.515 [Gauge] [DEBUG] Adding specs from C:\Users\ECK\Desktop\test\ApiRestAssuredTest\specs\example.spec
+16-05-2022 17:32:50.515 [Gauge] [INFO] Initializing steps cache with 1 steps
+16-05-2022 17:32:50.520 [Gauge] [INFO] Gauge daemon initialized and listening on port: 53362
+16-05-2022 17:32:50.524 [Gauge] [DEBUG] Watching directory: C:\Users\ECK\Desktop\test\ApiRestAssuredTest\specs
+16-05-2022 17:32:50.525 [Gauge] [DEBUG] Found 1 files
