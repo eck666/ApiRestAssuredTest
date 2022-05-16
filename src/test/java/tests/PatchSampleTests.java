@@ -12,7 +12,7 @@ import static MainTests.ResponseCodes.SUCCESS_STATUS_CODE;
 import static io.restassured.RestAssured.given;
 import static resources.Payload.createUpdateUserPayload;
 
-public class PatchCallSampleTests extends BaseTest {
+public class PatchSampleTests extends BaseTest {
 
     @Test(priority = 4, description = "Update user by ID PATCH")
     public void updateUserPatchTest() {
@@ -32,6 +32,6 @@ public class PatchCallSampleTests extends BaseTest {
         Assert.assertEquals(jsonPath.getString("name"), user);
         Assert.assertEquals(jsonPath.getString("job"), job);
         Assert.assertNotNull(jsonPath.getString("updatedAt"));
-        System.out.println("TEST STATUS CODE " + SUCCESS_STATUS_CODE );
+        System.out.println("Resource processed successfully with code " + SUCCESS_STATUS_CODE);
     }
 }

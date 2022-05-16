@@ -10,11 +10,10 @@ import org.testng.annotations.Test;
 import static MainTests.Endpoints.USERS;
 import static MainTests.Endpoints.USER_BY_ID;
 import static MainTests.Formatter.convertResponseToJson;
-import static MainTests.ResponseCodes.NOT_FOUND_STATUS_CODE;
-import static MainTests.ResponseCodes.SUCCESS_STATUS_CODE;
+import static MainTests.ResponseCodes.*;
 import static io.restassured.RestAssured.given;
 
-public class GetCallSampleTests extends BaseTest {
+public class GetSampleTests extends BaseTest {
 
     @Test(priority = 0, description = "Get user by ID")
     public void getUsersByIDTest() {
@@ -29,6 +28,7 @@ public class GetCallSampleTests extends BaseTest {
         Assert.assertEquals(jsonPath.getString("data.first_name"), "Janet");
         Assert.assertEquals(jsonPath.getString("data.last_name"), "Weaver");
         Assert.assertEquals(jsonPath.getString("data.email"), "janet.weaver@reqres.in");
+        System.out.println("Resource processed successfully with code " + SUCCESS_STATUS_CODE);
     }
 
     @Test(priority = 1, description = "Get User List By Page Number")
@@ -46,6 +46,7 @@ public class GetCallSampleTests extends BaseTest {
         Assert.assertEquals(jsonPath.getString("data[0].email"), "michael.lawson@reqres.in");
         Assert.assertEquals(jsonPath.getString("data[0].first_name"), "Michael");
         Assert.assertEquals(jsonPath.getString("data[0].last_name"), "Lawson");
+        System.out.println("Resource processed successfully with code " + SUCCESS_STATUS_CODE);
     }
 
     @Test(priority = 6, description = "User not found user ID")

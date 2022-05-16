@@ -12,14 +12,14 @@ import static MainTests.ResponseCodes.SUCCESS_STATUS_CODE;
 import static io.restassured.RestAssured.given;
 import static resources.Payload.createUpdateUserPayload;
 
-public class PutCallSampleTests extends BaseTest {
+public class PutSampleTests extends BaseTest {
 
     @Test(priority = 3, description = "Update user by ID PUT")
     public void updateUserPutTest() {
         int userID = 2;
 
-        String user = "M8958";
-        String job = "SDET";
+        String user = "ECK";
+        String job = "Test Automation";
 
         Response response = given()
                 .pathParam("id", userID)
@@ -27,11 +27,11 @@ public class PutCallSampleTests extends BaseTest {
                 .contentType(ContentType.JSON)
                 .when().put(USER_BY_ID)
                 .then().extract().response();
-//        logResponseInReport(response);
         JsonPath jsonPath = convertResponseToJson(response);
         Assert.assertEquals(response.statusCode(), SUCCESS_STATUS_CODE);
         Assert.assertEquals(jsonPath.getString("name"), user);
         Assert.assertEquals(jsonPath.getString("job"), job);
         Assert.assertNotNull(jsonPath.getString("updatedAt"));
+        System.out.println("Resource processed successfully with code " + SUCCESS_STATUS_CODE);
     }
 }
